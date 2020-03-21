@@ -1,5 +1,5 @@
 const imageExists = (path) => {
-  return path.match(/\.png$|\.jpg$/) !== null;
+  return path.match(/\.png|\.jpg/) !== null;
 }
 
 const cssExists = (path) => {

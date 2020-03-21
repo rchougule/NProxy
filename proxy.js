@@ -26,7 +26,7 @@ const parseIncomingRequest = (clientRequest, clientResponse) => {
   } else {
     options.allowed = true;
     logger(options);
-    
+
     // Execute the Request
     executeRequest(options, clientRequest, clientResponse);
   }
@@ -65,4 +65,6 @@ const executeRequest = (options, clientRequest, clientResponse) => {
 const server = http.createServer(parseIncomingRequest);
 
 // Listen to PORT 4998
-server.listen(4998);
+server.listen(4998, () => {
+  console.log("******************* PROXY STARTED ON http://localhost:4998 *******************\n")
+});

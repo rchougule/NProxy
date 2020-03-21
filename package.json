@@ -1,0 +1,26 @@
+{
+  "name": "nproxy---simple-web-proxy-in-node",
+  "version": "1.0.0",
+  "description": "A Simple HTTP Proxy made in Node.js",
+  "main": "proxy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rchougule/NProxy---Simple-Web-Proxy-in-Node.js.git"
+  },
+  "keywords": [
+    "Proxy",
+    "Node.js"
+  ],
+  "author": "Rohan Chougule",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rchougule/NProxy---Simple-Web-Proxy-in-Node.js/issues"
+  },
+  "homepage": "https://github.com/rchougule/NProxy---Simple-Web-Proxy-in-Node.js#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}

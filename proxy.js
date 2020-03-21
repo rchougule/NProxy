@@ -1,5 +1,7 @@
 const http = require('http');
 const url = require('url');
+const { blockResources } = require('./middleware');
+const { imageExists, cssExists } = require('./plugins');
 const { logger } = require('./util');
 
 const parseIncomingRequest = (clientRequest, clientResponse) => {
@@ -14,12 +16,21 @@ const parseIncomingRequest = (clientRequest, clientResponse) => {
     path: requestToFulfil.path
   }
 
-  logger(options);
-
   // PLUGINS
+  if (blockResources(options, cssExists)) {
+    options.allowed = false;
+    logger(options);
 
-  // Execute the Request
-  executeRequest(options, clientRequest, clientResponse);
+    // Don't allow the request to proceed and terminate here itself
+    clientResponse.end();
+  } else {
+    options.allowed = true;
+    logger(options);
+    
+    // Execute the Request
+    executeRequest(options, clientRequest, clientResponse);
+  }
+
 }
 
 const executeRequest = (options, clientRequest, clientResponse) => {

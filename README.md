@@ -1,4 +1,5 @@
-![Image Node.js](https://img.shields.io/badge/Node.js-NProxy-brightgreen)
+![Image Node.js](https://img.shields.io/badge/Node.js-NProxy-brightgreen?style=for-the-badge&logo=appveyor) ![[YouTube Link](https://www.youtube.com/watch?v=JkY0ANDx1dU&t=1s)](https://img.shields.io/badge/Tutorial-YouTube-red?style=for-the-badge&logo=appveyor)
+
 # NProxy
 A Simple HTTP Proxy made with the ability to add plugins as middleware.
 

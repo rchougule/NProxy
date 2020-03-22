@@ -17,7 +17,7 @@ const parseIncomingRequest = (clientRequest, clientResponse) => {
   }
 
   // PLUGINS
-  if (blockResources(options, cssExists)) {
+  if (blockResources(options, imageExists)) {
     options.allowed = false;
     logger(options);
 
@@ -52,6 +52,10 @@ const executeRequest = (options, clientRequest, clientResponse) => {
 
   // Map data coming from client request to the external request being made
   clientRequest.on("data", (chunk) => {
+
+    if(JSON.parse(chunk.toString()).language === "english") {
+      chunk = Buffer.from(JSON.stringify({"language":"spanish"}))
+    }
     externalRequest.write(chunk);
   });
 
